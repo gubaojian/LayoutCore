@@ -1,9 +1,13 @@
-# LayoutCore
-Rewrite LayoutCore from Blink, Powerfull css layout engine
+# RenderUI
+Cross Platform C++ UI Component For Mobile Platform
+
+
+### C++ Component
 
 RenderView
 Div
 Text
 Image
+RichText
 Span
 Paragraph 
