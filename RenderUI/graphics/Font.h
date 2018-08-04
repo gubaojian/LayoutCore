@@ -25,7 +25,8 @@ namespace RenderUI {
     enum Alignment{
         ALIGN_NORMAL,
         ALIGN_LEFT,
-        ALIGN_CENTER
+        ALIGN_CENTER,
+        ALIGN_RIGHT,
     };
 
     enum TextDecoration{
@@ -41,11 +42,12 @@ namespace RenderUI {
     };
 
     typedef  struct FontMetrics{
-        float top;
-        float ascent;
-        float descent;
-        float bottom;
-        float leading;
+        int top;
+        int ascent;
+        int descent;
+        int bottom;
+        int leading;
+        int height;
     } FontMetrics;
 
 

@@ -20,6 +20,18 @@ namespace  RenderUI{
     public:
         TextLine(int maxWidth);
 
+        inline int getXOffset(){
+            return this->xOffset;
+        }
+
+        inline void setLineHeight(int lineHeight){
+             this->lineHeight = lineHeight;
+        }
+
+        inline int getLineHeight(){
+            return this->lineHeight;
+        }
+
         inline std::string& lineText(){
             return text;
         }
@@ -28,13 +40,25 @@ namespace  RenderUI{
             return space >= spaceWidth;
         }
 
+        inline int getSpace(){
+            return this->space;
+        }
+
+        inline void reduceSpace(int spaceWidth){
+            this->space -= spaceWidth;
+        }
+
+        inline int getMaxWidth(){
+            return this->maxWidth;
+        }
 
 
     private:
         int maxWidth;
         int space;
         std::string text;
-        Rect frame;
+        int lineHeight = 0 ;
+        int  xOffset;
     };
 }
 

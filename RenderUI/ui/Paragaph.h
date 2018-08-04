@@ -4,11 +4,15 @@
 
 #ifndef RENDERUI_PARAGAPH_H
 #define RENDERUI_PARAGAPH_H
+#include "Text.h"
 
 
-class Paragaph {
+namespace  RenderUI {
 
-};
+    class Paragaph  : public Text{
+
+    };
+}
 
 
 #endif //RENDERUI_PARAGAPH_H

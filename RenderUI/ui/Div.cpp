@@ -8,6 +8,7 @@ namespace RenderUI{
 
     Div::Div() {
         childs = new ChildList();
+        tag = "div";
     }
 
     void Div::layout() {
@@ -31,7 +32,10 @@ namespace RenderUI{
     }
 
     void Div::drawBackground(Canvas *canvas) {
-
+        if(backgroundColor != 0){
+            Rect rect = Frame();
+            canvas->drawRect(rect, nullptr);
+        }
     }
 
     void Div::drawContent(Canvas *canvas) {

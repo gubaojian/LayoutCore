@@ -18,6 +18,8 @@ namespace RenderUI {
     class Paint {
 
     public:
+        Paint();
+        ~Paint();
         int measureText(const char* utf8, int offset, int length);
         void setColor(int32_t color);
         void setFontSize(int32_t fontSize);
@@ -25,6 +27,8 @@ namespace RenderUI {
         void setFont(Font* font);
         FontMetrics getFontMetrics();
 
+    private:
+        void* ptr;
     };
 }
 

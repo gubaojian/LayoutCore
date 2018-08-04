@@ -38,9 +38,11 @@ namespace RenderUI {
              return breakCodePoints.end() != it;
         }
 
-        short next_utf32_code_point_len(const char* utf8, int offset, int end, uint32_t* codePoint){
+        short next_utf32_code_point_len(const char* target, int offset, int end, uint32_t* codePoint){
             uint32_t  ch = 0;
-            unsigned short extraBytesToRead = trailingBytesForUTF8[utf8[offset]];
+            const unsigned char* utf8 = (const unsigned char *)(target + offset);
+            unsigned short extraBytesToRead = trailingBytesForUTF8[*utf8];
+            printf("extraBytesToRead %d  %d \n", extraBytesToRead, *utf8);
             if (offset + extraBytesToRead >= end) {
                 return  end - offset;
             }
@@ -58,7 +60,7 @@ namespace RenderUI {
 
             ch -= offsetsFromUTF8[extraBytesToRead];
             *codePoint = ch;
-            return  extraBytesToRead;
+            return  (extraBytesToRead + 1);
         }
     }
 }

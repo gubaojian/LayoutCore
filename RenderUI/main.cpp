@@ -17,14 +17,20 @@ int main() {
 
     Div* div = new Div();
     Text* text = new Text();
+    text->setBackgroundColor(0xFF00FF);
     text->setFontSize(32);
-    text->setColor(0x888888);
+    text->setText("hello Text UI中国人民起来啦中国人民起来啦");
+    text->setTextOverflow(TextOverflow::OVERFLOW_ELLIPSIS);
+    text->setColor(0xFFA500);
+    text->setFrame(RenderUI::MakeRect(100, 100, 200, 200));
+    text->setMaxLines(4);
+    text->setAlignment(Alignment::ALIGN_CENTER);
     div->addChild(text);
+
     Canvas* canvas = new Canvas("renderUi.png");
     Paint* paint = new Paint();
-
     std::string hello = "hello 中国";
-    canvas->drawText(hello, 0, hello.length(), paint, 100, 100);
+    canvas->drawText(100, 300, hello, 0, hello.length(), paint);
 
     std::cout << "layout done" << std::endl;
     div->layout();

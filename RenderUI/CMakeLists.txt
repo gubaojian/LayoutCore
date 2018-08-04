@@ -14,6 +14,9 @@ set(SOURCE_FILES
         ui/Div.cpp
         ui/Image.cpp
         ui/Text.cpp
+        ui/RichText.cpp
+        ui/Span.cpp
+        ui/Paragaph.cpp
         ui/TextLine.cpp)
 
 

@@ -8,30 +8,40 @@
 namespace RenderUI {
 
     typedef struct Rect{
-        float x;
-        float y;
-        float width;
-        float height;
+        int x;
+        int y;
+        int width;
+        int height;
     } Rect;
 
     typedef struct Size{
-        float width;
-        float height;
+        int width;
+        int height;
     } Size;
 
     typedef struct Margin{
-        float left;
-        float top;
-        float right;
-        float bottom;
+        int left;
+        int top;
+        int right;
+        int bottom;
     } Margin;
 
     typedef struct Padding{
-        float left;
-        float top;
-        float right;
-        float bottom;
+        int left;
+        int top;
+        int right;
+        int bottom;
     } Padding;
+
+
+    static inline Rect MakeRect(int x, int y, int width, int height){
+        Rect rect;
+        rect.x = x;
+        rect.y = y;
+        rect.width = width;
+        rect.height = height;
+        return rect;
+    }
 
 }
 

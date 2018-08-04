@@ -12,8 +12,14 @@
 
 namespace RenderUI{
 
+    const static std::string TAG_DIV = "div";
+    const static std::string TAG_SPAN = "span";
+
     class Div;
     typedef std::vector<Div*> ChildList;
+    typedef enum BorderStyle{
+        STYLE_SOLID,
+    }BorderStyle;
 
     class Div {
 
@@ -36,6 +42,9 @@ namespace RenderUI{
 
         void addChild(Div* div);
         void addRemove(Div* div);
+        ChildList* getChilds(){
+            return childs;
+        }
 
         inline Rect Frame(){
             return this->frameRect;
@@ -61,11 +70,36 @@ namespace RenderUI{
             this->padding = padding;
         }
 
+        inline void setBackgroundColor(int32_t  backgroundColor){
+            this->backgroundColor = backgroundColor;
+        }
+
+        inline int32_t getBackgroundColor(){
+            return this->backgroundColor;
+        }
+
+        inline void setTag(std::string tag){
+            this->tag = tag;
+        }
+
+        inline std::string& getTag(){
+            return this->tag;
+        }
+
+
+
     private:
         Rect  frameRect;
         Margin margin;
         Padding padding;
         ChildList* childs;
+        int32_t  backgroundColor;
+        int borderRadius;
+        BorderStyle borderStyle;
+        int borderColor;
+        int borderWidth;
+        std::string tag;
+
 
 
 

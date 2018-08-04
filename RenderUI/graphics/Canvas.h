@@ -8,6 +8,7 @@
 #include <unitypes.h>
 #include <string>
 #include "Paint.h"
+#include "geometry.h"
 
 namespace RenderUI {
 
@@ -16,8 +17,9 @@ namespace RenderUI {
     public:
         Canvas(std::string config);
         ~Canvas();
-        void drawText(std::string& text, int offset, int length, Paint* paint, float x, float y);
+        void drawText(float x, float y, std::string& text, int offset, int length, Paint* paint);
         void drawImg(std::string& src, int scaleType, float x, float y, float width, float height);
+        void drawRect(Rect &rect, Paint* paint);
 
         void tranlate(float dx, float dy);
 

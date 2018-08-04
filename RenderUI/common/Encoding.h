@@ -13,7 +13,6 @@ namespace RenderUI {
     namespace Encoding{
 
         /**
-         * helloworld 3.333333
          * */
         static std::set<uint32_t> breakCodePoints = {':', ' ', '=', ','};
 

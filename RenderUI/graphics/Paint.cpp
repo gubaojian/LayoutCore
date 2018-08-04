@@ -7,6 +7,11 @@
 
 namespace RenderUI {
 
+
+    Paint::Paint() {
+
+    }
+
     void  Paint::setStyle(int32_t color) {
 
     }
@@ -24,12 +29,15 @@ namespace RenderUI {
     }
 
     int Paint::measureText(const char* text, int offset, int length) {
-        return 32*length;
+        std::string str(text);
+        printf("measure text %s  %d %d \n", str.substr(offset, length).c_str(), offset, length);
+        return 14*length;
     }
 
     FontMetrics Paint::getFontMetrics() {
         FontMetrics metrics;
         metrics.top = 10;
+        metrics.height = 32;
         return metrics;
     }
 

@@ -4,6 +4,7 @@
 
 #ifndef RENDERUI_RICHTEXT_H
 #define RENDERUI_RICHTEXT_H
+#include "Text.h"
 
 namespace  RenderUI{
 
@@ -11,11 +12,7 @@ namespace  RenderUI{
     public:
         explicit RichText();
         void layout() override;
-        void setText(std::string text);
-
-
-    private:
-        std::string text;
+        void draw(Canvas* canvas) override;
     };
 }
 
